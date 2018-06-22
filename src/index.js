@@ -1,5 +1,7 @@
- import { createHgComponent } from 'higlass';
+import { createHgComponent } from 'higlass';
 
- window.createHg = createHgComponent;
+window.globalVars = {}; //global Vars: createHg, views, viewNum, hgv, activateFunctions
+
+globalVars.createHg = createHgComponent;
 
 
