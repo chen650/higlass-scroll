@@ -8,30 +8,30 @@ within the section
 */
 
 
-window.activateFunctions = [] ////
-var updateFunctions = []
+globalVars.activateFunctions = [] ////
+globalVars.updateFunctions = []
 
 
 /* Title Section */
 
-activateFunctions.push( function(){
+globalVars.activateFunctions.push( function(){
 
   $('#development-demo').css("visibility",'hidden')
 
 })
 
-updateFunctions.push(function(progress) {})
+globalVars.updateFunctions.push(function(progress) {})
 
 
 /* Section 1 text... */
 
-activateFunctions.push( function(){
+globalVars.activateFunctions.push( function(){
 
   $('#development-demo').css("visibility",'visible');
   
 })
 
-updateFunctions.push(function(progress) {
+globalVars.updateFunctions.push(function(progress) {
 
   
 
@@ -40,13 +40,14 @@ updateFunctions.push(function(progress) {
 
 /* Section 2 text... */
 
-activateFunctions.push( function(){
-
-  hgv.zoomTo("aa", 1,1860755000.2693691,1,1225251000.2446117, 100);
+globalVars.activateFunctions.push( function(){
+	if(typeof globalVars.hgv !== 'undefined' && typeof globalVars.viewNum == 'number') {
+	  globalVars.hgv.zoomTo(globalVars.views[globalVars.viewNum].uid, 1,1860755000.2693691,1,1225251000.2446117, 100); //// replace hard-coding with user input
+	}
 
 })
 
-updateFunctions.push(function(progress) {
+globalVars.updateFunctions.push(function(progress) {
 
   
 
@@ -55,15 +56,12 @@ updateFunctions.push(function(progress) {
 
 /* Section 3 text... */
 
-activateFunctions.push( function(){
+globalVars.activateFunctions.push( function(){
 
-  
 
 })
 
-updateFunctions.push(function(progress) {})
+globalVars.updateFunctions.push(function(progress) {})
 
 
-
-// Make it happen!
-scrollerDisplay(d3.select('#graphic'), 'step', activateFunctions, updateFunctions)
+scrollerDisplay(d3.select('#graphic'), 'step', globalVars.activateFunctions, globalVars.updateFunctions)

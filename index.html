@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 
-<!-- TODO: 
+<!-- TODO: (////)
 * fix bug: export view as link fails 
-* fix bug: hgv callback (error in ./src/conductor.js)
 * add progressive scrolling effects with updateFunctions (./src/conductor.js)
   * natural zooming
   * fade in/out
+* remove zoom input hardcoding in ./src/conductor.js
+  * accept chromosome location inputs and translate
+* catching errors and invalid inputs
 -->
 
 <!-- In this commit: 
-* zoom into hgv stepwise on scroll 
-* toggle hgv visibility stepwise on scroll
+* bug fixed: don't zoom if hgv undefined
+* added function to sort viewConf by position
+* take user prompt of view config ID and which view to zoom into
+* supporting view configs w/ multiple views
 -->
 
 <html class="no-js" lang="en">
@@ -68,5 +72,6 @@
 <!-- coordinates overall animation -->
 <script src="src/conductor.js"></script>
 <script src="src/zoomzoom.js"></script>
+<script src="src/sortViewConf.js"></script>
 
 </html>
