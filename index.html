@@ -7,14 +7,14 @@
   * fade in/out
 * remove zoom input hardcoding in ./src/conductor.js
   * accept chromosome location inputs and translate
-* catching errors and invalid inputs
+  * error handling
+* change zoomzoom file name now that it does more than just zoom
 -->
 
 <!-- In this commit: 
-* bug fixed: don't zoom if hgv undefined
-* added function to sort viewConf by position
-* take user prompt of view config ID and which view to zoom into
-* supporting view configs w/ multiple views
+* catch error and break promise chain if an invalid view config ID is given
+* catch error and prevent viewNum-specific action if viewNum given outside bounds of viewConf
+* catch errors for null and incorrect type inputs
 -->
 
 <html class="no-js" lang="en">
@@ -71,7 +71,7 @@
 
 <!-- coordinates overall animation -->
 <script src="src/conductor.js"></script>
-<script src="src/zoomzoom.js"></script>
+<script src="src/loadHg.js"></script>
 <script src="src/sortViewConf.js"></script>
 
 </html>
