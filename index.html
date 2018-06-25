@@ -8,13 +8,17 @@
 * remove zoom input hardcoding in ./src/conductor.js
   * accept chromosome location inputs and translate
   * error handling
-* change zoomzoom file name now that it does more than just zoom
+* support view sync
+* multiple view configs
+* transitions b/w view configs
+* calculate diff b/w view configs
+* export file
 -->
 
 <!-- In this commit: 
-* catch error and break promise chain if an invalid view config ID is given
-* catch error and prevent viewNum-specific action if viewNum given outside bounds of viewConf
-* catch errors for null and incorrect type inputs
+* dynamically create sections
+* dynamically add custom text to each section
+
 -->
 
 <html class="no-js" lang="en">
@@ -23,7 +27,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=500" />
   <title>Scrolling HiGlass</title>
-  <script src="./dist/main.js"></script>
 
   <link rel="stylesheet" type="text/css" href="third_party/style.css"> 
   <link rel="stylesheet" href="./node_modules/higlass/app/styles/page.css">
@@ -35,6 +38,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.6.2/pixi.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.31.0/react-bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <script src="./dist/main.js"></script>
+
 </head>
 
 <body >
@@ -43,15 +49,6 @@
     <div id="sections">
       <section class="step" style="margin-bottom:150px">
         <h1> Scrolling HiGlass</h1>
-      </section>
-      <section class="step">
-        <i>Section 1 text</i>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis tincidunt risus, a ornare lorem. Etiam lacinia venenatis mollis. Maecenas dignissim sed eros in iaculis. Nulla efficitur imperdiet risus, sed ultrices sem posuere sit amet. Donec nunc turpis, porttitor at rhoncus sed, placerat nec lectus. Nulla vehicula vulputate nisi, vel vehicula augue vulputate nec. Sed vel felis sed urna convallis tristique sit amet sed turpis. Donec mattis et augue aliquam.
-      </section>
-      <section class="step">
-        <i>Section 2 text</i>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non condimentum arcu. Donec pellentesque enim sit amet faucibus sagittis. Sed euismod vel risus ac bibendum. Aenean venenatis arcu sed semper dignissim. Nam consequat arcu velit, vitae malesuada nisl vestibulum ut. Suspendisse id leo magna. Morbi eu nunc nec turpis convallis.
-      </section>
-      <section class="step">
-        <i>Section 3 text</i>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id tempus magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin quis nibh a leo.
       </section>
     </div>
 
@@ -63,6 +60,8 @@
     </div>
 
 </body>
+
+<script src="src/loadHTML.js"></script> <!-- //// -->
 
 <!-- Jim Vallandingham's scroller scripts from https://github.com/stitchfix/hello-scrollytelling -->
 <script src="/third_party/scroller.js"></script>

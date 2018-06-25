@@ -8,60 +8,70 @@ within the section
 */
 
 
-globalVars.activateFunctions = [] ////
+globalVars.activateFunctions = [] 
 globalVars.updateFunctions = []
 
+// initialize for number of sections
+for (i=0; i<=globalVars.numSections; i++) { // inclusive to number of sections b/c title counts as one
+	globalVars.activateFunctions.push( function() {
+
+	});
+
+	globalVars.updateFunctions.push( function(progress) {
+
+	});
+}
 
 /* Title Section */
 
-globalVars.activateFunctions.push( function(){
+globalVars.activateFunctions[0] = function(){
 
   $('#development-demo').css("visibility",'hidden')
 
-})
+}
 
-globalVars.updateFunctions.push(function(progress) {})
+globalVars.updateFunctions[0] = function(progress) {}
 
 
 /* Section 1 text... */
 
-globalVars.activateFunctions.push( function(){
+globalVars.activateFunctions[1] = function(){
 
   $('#development-demo').css("visibility",'visible');
   
-})
+}
 
-globalVars.updateFunctions.push(function(progress) {
+globalVars.updateFunctions[1] = function(progress) {
 
   
 
-})
+}
 
 
 /* Section 2 text... */
 
-globalVars.activateFunctions.push( function(){
+globalVars.activateFunctions[2] = function(){
 	if(typeof globalVars.hgv !== 'undefined' && typeof globalVars.viewNum == 'number') {
 	  globalVars.hgv.zoomTo(globalVars.views[globalVars.viewNum].uid, 1,1860755000.2693691,1,1225251000.2446117, 100); //// replace hard-coding with user input
 	}
 
-})
+}
 
-globalVars.updateFunctions.push(function(progress) {
+globalVars.updateFunctions[2] = function(progress) {
 
   
 
-})
+}
 
 
 /* Section 3 text... */
 
-globalVars.activateFunctions.push( function(){
+globalVars.activateFunctions[3] = function(){
 
 
-})
+}
 
-globalVars.updateFunctions.push(function(progress) {})
+globalVars.updateFunctions[3] = function(progress) {}
 
 
 scrollerDisplay(d3.select('#graphic'), 'step', globalVars.activateFunctions, globalVars.updateFunctions)

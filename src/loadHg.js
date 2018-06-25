@@ -1,5 +1,6 @@
 window.onload = function here() {
 
+
   const baseApiUrl = 'http://higlass.io/api/v1/viewconfs/?d=';
   const regExBaseHgUrl = /http:\/\/higlass.io\/app\/\?config=/;
 
@@ -10,15 +11,16 @@ window.onload = function here() {
     return ''
   }
 
-  function inputToInt(input) {
+  function inputToInt(input) { // convert string input to integer
     if (Number.isInteger(parseInt(input))) {
       return parseInt(input)
     }
     return 0
   }
 
-  var viewConfigUrl = convertApiUrl(prompt('Input view config link'))
-  globalVars.viewNum = inputToInt(
+  var viewConfigUrl = convertApiUrl(prompt('Input view config link')) // ask for view config URL
+
+  globalVars.viewNum = inputToInt( // ask for number of view of interest
     prompt('Which view do you want to zoom in on? (Enter number 1-n counting left to right and top to bottom.')
     ) - 1; // adjusted bc array counts from 0 
 
