@@ -5,20 +5,17 @@
 * add progressive scrolling effects with updateFunctions (./src/conductor.js)
   * natural zooming
   * fade in/out
-* remove zoom input hardcoding in ./src/conductor.js
-  * accept chromosome location inputs and translate
-  * error handling
 * support view sync
-* multiple view configs
 * transitions b/w view configs
 * calculate diff b/w view configs
 * export file
 -->
 
 <!-- In this commit: 
-* dynamically create sections
-* dynamically add custom text to each section
-
+* example showing how to switch view configs
+* remove zoom input hardcoding in ./src/conductor.js
+  * accept chromosome location inputs and translate
+  * error handling
 -->
 
 <html class="no-js" lang="en">
@@ -61,7 +58,8 @@
 
 </body>
 
-<script src="src/loadHTML.js"></script> <!-- //// -->
+<script src="src/calcPos.js"></script> 
+<script src="src/loadHTML.js"></script> 
 
 <!-- Jim Vallandingham's scroller scripts from https://github.com/stitchfix/hello-scrollytelling -->
 <script src="/third_party/scroller.js"></script>

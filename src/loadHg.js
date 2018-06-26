@@ -78,5 +78,4 @@ window.onload = function here() {
     .then(createHgvAndSetZoom, handleErrors)
     .then(null, showError); // error handling
 
-
 }
