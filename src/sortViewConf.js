@@ -33,4 +33,4 @@ Object.defineProperty(Array.prototype, 'stableSort', { // order views in viewCon
 
       return this //sorts in place
     }
-}) //sample ID: QqsAbqjHRwKHcsUiSkWskw
+}) //sample link: http://higlass.io/app/?config=QqsAbqjHRwKHcsUiSkWskw
